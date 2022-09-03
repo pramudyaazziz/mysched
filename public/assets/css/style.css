@@ -1,0 +1,19 @@
+input.form-control.note-title {
+  font-weight: 700;
+}
+
+input.form-control.note-title::placeholder {
+  font-weight: 700;
+}
+
+.saved-notes {
+  color: black;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.container.auth {
+  min-height: 100vh;
+  display: flex;
+}
