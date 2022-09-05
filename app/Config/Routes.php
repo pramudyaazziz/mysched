@@ -49,16 +49,19 @@ $routes->group('', ['filter' => 'isLoggedIn'], function ($routes) {
 
 
 $routes->group('', ['filter' => 'isLoggedOut'], function ($routes) {
-    $routes->get('/home', 'home');
     $routes->get('/notepad', 'Notepad::index', ['as' => 'notepad']);
     $routes->post('/create-note', 'Notepad::create', ['as' => 'notepad.create']);
     $routes->get('/notepad/detail/(:segment)', 'Notepad::detail/$1');
-    $routes->post('/notepad/detail/(:segment)', 'Notepad::update/$1');
+    $routes->get('/notepad/edit/(:segment)', 'Notepad::edit/$1');
+    $routes->post('/notepad/edit/(:segment)', 'Notepad::update/$1');
     $routes->delete('/notepad/delete/(:segment)', 'Notepad::delete/$1');
-    $routes->get('/new-activity', 'Activity::newActivity', ['as' => 'activity.new']);
-    $routes->get('/routines', 'Activity::routine', ['as' => 'activity.routine']);
-    $routes->get('/logout', 'Auth::logout', ['as' => 'logout']);
 });
+
+
+$routes->get('/home', 'home');
+$routes->get('/new-activity', 'Activity::newActivity', ['as' => 'activity.new']);
+$routes->get('/routines', 'Activity::routine', ['as' => 'activity.routine']);
+$routes->get('/logout', 'Auth::logout', ['as' => 'logout']);
 
 /*
  * --------------------------------------------------------------------

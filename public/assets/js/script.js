@@ -1,6 +1,8 @@
 $(document).ready(function () {
   $("#accordionSidebar a").each(function (index, element) {
-    if ($(element).attr("href") == window.location.pathname) {
+    let pathArray = window.location.pathname.split("/");
+    let prefix = `/${pathArray[1]}`;
+    if ($(element).attr("href") == prefix) {
       if ($(element).hasClass("collapse-item") == true) {
         $(element).parent().parent().parent().addClass("active");
         $(element).parent().parent().addClass("show");
