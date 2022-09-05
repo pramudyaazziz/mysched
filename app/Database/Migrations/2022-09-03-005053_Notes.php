@@ -11,25 +11,32 @@ class Notes extends Migration
         $this->forge->addField([
             'note_id' => [
                 'type'           => 'BIGINT',
-                'constraint'     => 5,
+                'constraint'     => 20,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'blog_title' => [
+            'user_id' => [
+                'type'           => 'BIGINT',
+                'constraint'     => 29,
+                'unsigned'       => true,
+            ],
+            'note_title' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
             ],
-            'blog_description' => [
+            'note_content' => [
                 'type' => 'TEXT',
                 'null' => true,
             ],
         ]);
+
         $this->forge->addKey('note_id', true);
+        $this->forge->addForeignKey('user_id', 'users', 'user_id');
         $this->forge->createTable('notes');
     }
 
     public function down()
     {
-        $this->forge->dropTable('blog');
+        $this->forge->dropTable('notes');
     }
 }

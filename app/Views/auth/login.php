@@ -24,9 +24,12 @@
                                             </div>
                                         </div>
                                     <?php endif ?>
-                                    <?php if (session()->getFlashdata('msg')) : ?>
-                                        <div class="alert alert-warning">
-                                            <?= session()->getFlashdata('msg') ?>
+                                    <?php if (session()->getFlashdata('error')) : ?>
+                                        <div class="alert alert-warning alert-dismissible show fade">
+                                            <div class="alert-body">
+                                                <button class="close" data-dismiss="alert">x</button>
+                                                <?= session()->getFlashdata('error') ?>
+                                            </div>
                                         </div>
                                     <?php endif; ?>
                                     <form method="POST" action="<?= route_to('login.proses') ?>" class="user">

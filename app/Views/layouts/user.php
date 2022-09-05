@@ -18,8 +18,8 @@
     <!-- Custom styles for this template-->
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
-    <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
     <link href="<?= base_url('sbadmin/css/sb-admin-2.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
 
 </head>
 

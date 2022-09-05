@@ -39,12 +39,10 @@ class Auth extends BaseController
                 $session->set($ses_data);
                 return redirect()->route('home');
             } else {
-                $session->setFlashdata('msg', 'Password is incorrect.');
-                return redirect()->route('login');
+                return redirect()->to('/login')->with('error', 'Password is incorrect');
             }
         } else {
-            $session->setFlashdata('msg', 'Username does not exist.');
-            return redirect()->route('home');
+            return redirect()->to('/login')->with('error', 'Username does not exist');
         }
     }
 
