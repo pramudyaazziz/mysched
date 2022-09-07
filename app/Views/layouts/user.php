@@ -67,8 +67,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Master Activity:</h6>
-                        <a class="collapse-item" href="<?= route_to('activity.new') ?>">New Activity</a>
-                        <a class="collapse-item" href="<?= route_to('activity.routine') ?>">My Routines</a>
+                        <a class="collapse-item" href="<?= route_to('activity') ?>">My Activity</a>
+                        <a class="collapse-item" href="<?= route_to('routine') ?>">My Routines</a>
                     </div>
                 </div>
             </li>
@@ -140,7 +140,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 text-dark mb-4"><?= $title ?></h1>
+                    <h1 class="h3 text-dark mb-4"><?= $header ?></h1>
 
                     <!-- Content Row -->
                     <?= $this->renderSection("content"); ?>

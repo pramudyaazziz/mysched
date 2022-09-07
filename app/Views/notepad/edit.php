@@ -10,7 +10,7 @@
 <?php endif ?>
 <div class="row">
     <div class="col">
-        <form action="/notepad/update/<?= $note['note_id'] ?>" method="POST">
+        <form action="/notepad/edit/<?= $note['note_id'] ?>" method="POST">
             <div class="col-lg-9 p-0">
                 <div class="form-group">
                     <input type="text" name="note_title" class="form-control note-title" placeholder="Note Title" value="<?= $note['note_title'] ?>">

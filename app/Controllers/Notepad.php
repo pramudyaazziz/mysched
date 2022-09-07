@@ -17,7 +17,7 @@ class Notepad extends BaseController
     {
         $data = [
             'title' => 'Notepad',
-            // 'notes' => $this->note->getNotes()
+            'header' => 'Notepad'
         ];
         return view('notepad/index', $data);
     }
@@ -102,6 +102,7 @@ class Notepad extends BaseController
     {
         $data = [
             'title' => 'Notepad',
+            'header' => 'Notepad',
             'note'  => $this->note->find($id)
         ];
         return view('notepad/edit', $data);

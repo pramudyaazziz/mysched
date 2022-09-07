@@ -4,12 +4,12 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Notes extends Migration
+class Routine extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'note_id' => [
+            'routine_id' => [
                 'type'           => 'BIGINT',
                 'constraint'     => 20,
                 'unsigned'       => true,
@@ -20,23 +20,27 @@ class Notes extends Migration
                 'constraint'     => 20,
                 'unsigned'       => true,
             ],
-            'note_title' => [
+            'title' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
             ],
-            'note_content' => [
+            'description' => [
                 'type' => 'TEXT',
                 'null' => true,
             ],
+            'time' => [
+                'type' => 'TIME',
+                'null' => false
+            ]
         ]);
 
-        $this->forge->addKey('note_id', true);
+        $this->forge->addKey('routine_id', true);
         $this->forge->addForeignKey('user_id', 'users', 'user_id');
-        $this->forge->createTable('notes');
+        $this->forge->createTable('routines');
     }
 
     public function down()
     {
-        $this->forge->dropTable('notes');
+        $this->forge->dropTable('routines');
     }
 }
