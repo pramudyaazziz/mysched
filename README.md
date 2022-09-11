@@ -1,3 +1,6 @@
+## Framework
+Codeigniter 4
+
 ## Installation use git bash terminal :
 - git clone https://github.com/pramudyaazziz/mysched.git
 - cd mysched
