@@ -39,7 +39,7 @@ class Routine extends BaseController
                 'time' => $this->request->getPost('time'),
             ];
             $this->routine->insert($data);
-            return redirect()->route('routine');
+            return redirect()->route('routine')->with('success', 'Successfully added activity to routine');
         } else {
             $data = [
                 'validation' =>  $this->validator,
@@ -76,6 +76,6 @@ class Routine extends BaseController
     public function delete($id = null)
     {
         $this->routine->delete($id);
-        return redirect()->to('/routines');
+        return redirect()->to('/routines')->with('delete', 'Routine activity successfully deleted');
     }
 }

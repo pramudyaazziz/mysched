@@ -2,6 +2,7 @@
 
 namespace Config;
 
+use App\Filters\Dailyreset;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;

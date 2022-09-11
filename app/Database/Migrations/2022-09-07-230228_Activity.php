@@ -4,12 +4,12 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Routine extends Migration
+class Activity extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'routine_id' => [
+            'activity_id' => [
                 'type'           => 'BIGINT',
                 'constraint'     => 20,
                 'unsigned'       => true,
@@ -28,23 +28,27 @@ class Routine extends Migration
                 'type' => 'TEXT',
                 'null' => true,
             ],
-            'time' => [
-                'type' => 'TIME',
+            'date_activity' => [
+                'type' => 'DATETIME',
                 'null' => false
             ],
             'status' => [
                 'type' => 'ENUM("1","0" )', //1 for completed task, 0 for uncompleted
                 'null' => false
             ],
+            'completed_date' => [
+                'type' => 'DATETIME',
+                'null' => true
+            ]
         ]);
 
-        $this->forge->addKey('routine_id', true);
+        $this->forge->addKey('activity_id', true);
         $this->forge->addForeignKey('user_id', 'users', 'user_id');
-        $this->forge->createTable('routines');
+        $this->forge->createTable('activitys');
     }
 
     public function down()
     {
-        $this->forge->dropTable('routines');
+        $this->forge->dropTable('activitys');
     }
 }

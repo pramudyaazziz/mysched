@@ -65,27 +65,30 @@
     }
 
     function delete_note(id) {
-        $.ajax({
-            url: `<?= site_url('notepad/delete/') ?> ${id}`,
-            type: 'DELETE',
-            success: function(data) {
-                let objData = JSON.parse(data);
-                let msg = `<div class="alert alert-success alert-dismissible show fade">
-                                <div class="alert-body">
-                                    <button class="close" data-dismiss="alert">x</button>
-                                    ${objData.result}
-                                </div>
-                            </div>`;
-                loadNotes();
-                $('.message').html(msg);
-                if (note_selected == id) {
-                    $('#detail-note').addClass('d-none')
+        $confirm = confirm('Yakin hapus note?')
+        if ($confirm) {
+            $.ajax({
+                url: `<?= site_url('notepad/delete/') ?> ${id}`,
+                type: 'DELETE',
+                success: function(data) {
+                    let objData = JSON.parse(data);
+                    let msg = `<div class="alert alert-success alert-dismissible show fade">
+                                    <div class="alert-body">
+                                        <button class="close" data-dismiss="alert">x</button>
+                                        ${objData.result}
+                                    </div>
+                                </div>`;
+                    loadNotes();
+                    $('.message').html(msg);
+                    if (note_selected == id) {
+                        $('#detail-note').addClass('d-none')
+                    }
+                },
+                error: function(errorMsg) {
+                    alert(`Error: ${errorMsg}`)
                 }
-            },
-            error: function(errorMsg) {
-                alert(`Error: ${errorMsg}`)
-            }
-        })
+            })
+        }
     }
 
     function detail_note(id) {

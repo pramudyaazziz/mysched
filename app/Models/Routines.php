@@ -13,7 +13,8 @@ class Routines extends Model
         'user_id',
         'title',
         'description',
-        'time'
+        'time',
+        'status'
     ];
 
     function getRoutines()
@@ -22,6 +23,7 @@ class Routines extends Model
         $builder = $this->db->table('routines')
             ->join('users', 'users.user_id = routines.user_id')
             ->where('routines.user_id', $id)
+            ->orderBy('time', 'ASC')
             ->get();
         return $builder->getResult();
     }

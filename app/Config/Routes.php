@@ -21,7 +21,7 @@ $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
-// $routes->setAutoRoute(true);
+$routes->setAutoRoute(true);
 // The Auto Routing (Legacy) is very dangerous. It is easy to create vulnerable apps
 // where controller filters or CSRF protection are bypassed.
 // If you don't want to define all routes, please use the Auto Routing (Improved).
@@ -60,15 +60,28 @@ $routes->group('', ['filter' => 'isLoggedOut'], function ($routes) {
 });
 
 $routes->group('', ['filter' => 'isLoggedOut', 'namespace' => 'App\Controllers\Activity'], function ($routes) {
+    //activity
     $routes->get('/activity', 'Activity::index', ['as' => 'activity']);
+    $routes->post('/create-activity', 'Activity::create', ['as' => 'activity.create']);
+    $routes->get('/activity/(:segment)', 'Activity::detail/$1');
+    $routes->get('/activity-prev/(:segment)', 'Activity::prevDetail/$1');
+    $routes->get('/activity/edit/(:segment)', 'Activity::edit/$1');
+    $routes->post('/activity/update/(:segment)', 'Activity::update/$1');
+    $routes->get('/activity-done/(:segment)', 'Activity::mark/$1');
+    $routes->get('/activity-delete/(:segment)', 'Activity::delete/$1');
+
+
+    //routines
     $routes->get('/routines', 'Routine::index', ['as' => 'routine']);
     $routes->post('/routines', 'Routine::create', ['as' => 'routine.create']);
     $routes->get('/routines/edit/(:segment)', 'Routine::edit/$1', ['as' => 'routine.edit']);
     $routes->post('/routines/update/(:segment)', 'Routine::update/$1');
-    $routes->delete('/routines/delete/(:segment)', 'Routine::delete/$1');
+    $routes->get('/routines/delete/(:segment)', 'Routine::delete/$1');
 });
 
-$routes->get('/home', 'home');
+$routes->group('', ['filter' => 'isLoggedOut'], function ($routes) {
+    $routes->get('/home', 'home', ['as' => 'home']);
+});
 
 /*
  * --------------------------------------------------------------------
