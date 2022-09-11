@@ -28,13 +28,13 @@
 
     <!-- <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script> -->
     <!-- Bootstrap core JavaScript-->
-    <script src="<?= base_url('sbadmin/vendor/jquery/jquery.min.js') ?>"></script>
+    <script src="<?= base_url('sbadmin/assets/jquery/jquery.min.js') ?>"></script>
     <script src="<?= base_url('assets/js/script.js') ?>"></script>
-    <script src="<?= base_url('sbadmin/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+    <script src="<?= base_url('sbadmin/assets/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-    <script src="<?= base_url('sbadmin/vendor/jquery-easing/jquery.easing.min.js') ?> "></script>
+    <script src="<?= base_url('sbadmin/assets/jquery-easing/jquery.easing.min.js') ?> "></script>
 
     <!-- Custom scripts for all pages-->
     <script src="<?= base_url('sbadmin/js/sb-admin-2.min.js') ?> "></script>

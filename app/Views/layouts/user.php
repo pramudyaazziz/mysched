@@ -20,7 +20,7 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <link href="<?= base_url('sbadmin/css/sb-admin-2.css') ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
-    <script src="<?= base_url('sbadmin/vendor/jquery/jquery.min.js') ?>"></script>
+    <script src="<?= base_url('sbadmin/assets/jquery/jquery.min.js') ?>"></script>
 
 </head>
 
@@ -185,11 +185,11 @@
     <!-- Bootstrap core JavaScript-->
 
     <script src="<?= base_url('assets/js/script.js') ?>"></script>
-    <script src="<?= base_url('sbadmin/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+    <script src="<?= base_url('sbadmin/assets/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-    <script src="<?= base_url('sbadmin/vendor/jquery-easing/jquery.easing.min.js') ?> "></script>
+    <script src="<?= base_url('sbadmin/assets/jquery-easing/jquery.easing.min.js') ?> "></script>
 
     <!-- Custom scripts for all pages-->
     <script src="<?= base_url('sbadmin/js/sb-admin-2.min.js') ?> "></script>
