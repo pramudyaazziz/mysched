@@ -31,11 +31,7 @@ class Routine extends Migration
             'time' => [
                 'type' => 'TIME',
                 'null' => false
-            ],
-            'status' => [
-                'type' => 'ENUM("1","0" )', //1 for completed task, 0 for uncompleted
-                'null' => false
-            ],
+            ]
         ]);
 
         $this->forge->addKey('routine_id', true);
